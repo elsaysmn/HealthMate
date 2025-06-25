@@ -57,8 +57,8 @@
         <div class="socials">
             <img src="image/instagram.png" alt="Instagram">
             <img src="image/twitter.png" alt="Twitter">
-            <img src="image/pictures/facebook.png" alt="Facebook">
-            <img src="image/pictures/youtube.png" alt="Youtube">           
+            <img src="image/facebook.png" alt="Facebook">
+            <img src="image/youtube.png" alt="Youtube">           
         </div>
 
         <h5>Terms & Conditions         Privacy Policies</h5>
