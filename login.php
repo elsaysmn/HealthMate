@@ -34,19 +34,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc();
 
         if (password_verify($password, $user['password'])) {
-            $_SESSION["role"] = $role;
-            $_SESSION["username"] = $user[$usernameField];
-            $_SESSION["user_id"] = $user[$idField];
+    $_SESSION["role"] = $role;
+    $_SESSION["username"] = $user[$usernameField];
+    $_SESSION["user_id"] = $user[$idField];
 
-            include("dashboard_{$role}.php");
-        } else {
-            echo "Login Failed: Wrong password";
-            session_unset();
-        }
-    } else {
-        echo "Login Failed: User not found";
-        session_unset();
+    // Redirect user ikut role
+    if ($role == "Admin") {
+        header("Location: admin.php");
+        exit();
+    } elseif ($role == "Coach") {
+        header("Location: coach.php");
+        exit();
+    } elseif ($role == "User") {
+        header("Location: user.php");
+        exit();
     }
+}
+}
 }
 ?>
 
@@ -109,6 +113,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </table>
                         </form>
                             <p class="center"><b>Sign Up <a href="register_coach.php">Coach </a></b>
+                        <script>
+                            function togglePass() {
+                                var input = document.getElementById("pass");
+                                if (input.type === "password") {
+                                    input.type = "text";
+                                } else {
+                                    input.type = "password";
+                                }
+                            }
+                        </script>
+                        <p class="center"><b>Sign Up <a href="registerAdmin.php">Admin </a></b>
                         <script>
                             function togglePass() {
                                 var input = document.getElementById("pass");
