@@ -34,7 +34,7 @@ body {
     font-weight: bold;
 }
 
-.login-btn {
+.regCoach-btn, .regAdmin-btn {
     background-color: #6378c2;
     padding: 10px 20px;
     border-radius: 5px;
