@@ -25,18 +25,25 @@
         <div class="container">
             <div class="about-wrapper">
                 
-                <div class="product-image">
-                    <button id="prevBtn" class="scroll-btn left" >&#10094;</button>
+                <div class="product-section">
+    <div class="product-section">
+    <h2 class="product-title">Best-selling products:</h2>
 
-                    <div class="image-slider"> 
-                        <img class="slide active" src="image/products.png" alt="Amway Products">
-                        <img class="slide" src="image/products2.png" alt="Amway products">
-                        <img class="slide" src="image/products3.png" alt="Amway products">
-                        <img class="slide" src="image/products4.png" alt="Amway products">
-                    </div>
-                    <button id="nextBtn" class="scroll-btn right">&#10095;</button>
-                </div>
+    <div class="product-image">
+        <button id="prevBtn" class="scroll-btn left">&#10094;</button>
 
+        <div class="image-slider"> 
+            <img class="slide active" src="pictures/products.png" alt="Amway Products">
+            <img class="slide" src="pictures/products2.png" alt="Amway products">
+            <img class="slide" src="pictures/products3.png" alt="Amway products">
+            <img class="slide" src="pictures/products4.png" alt="Amway products">
+        </div>
+        
+        <button id="nextBtn" class="scroll-btn right">&#10095;</button>
+    </div>
+</div>
+
+</div>
             <div class="about-section">
                 <img src="image/logo.png" alt="Amway Logo"  class="amway-logo">
                 <div class="about-amway"> 
@@ -53,15 +60,17 @@
        
     </section>
 
-    <footer>
-        <div class="socials">
-            <img src="image/instagram.png" alt="Instagram">
-            <img src="image/twitter.png" alt="Twitter">
-            <img src="image/facebook.png" alt="Facebook">
-            <img src="image/youtube.png" alt="Youtube">           
+<footer>
+        <div class="social-icons">
+            <a href="#"><img src="image/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="image/youtube.png" alt="YouTube"></a>
         </div>
-
-        <h5>Terms & Conditions         Privacy Policies</h5>
+        <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policies</a>
+        </div>
     </footer>
 
     <script>

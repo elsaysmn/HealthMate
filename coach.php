@@ -4,19 +4,10 @@ include('connect.php');
 
 //Check if coach logs in
 if(!isset($_SESSION['CoachID'])) {
-    header("Location: coach.php");
+    header("Location: login.php");
     exit();
 }
-$coachName = $_SESSION['username'];
 $CoachID = $_SESSION['CoachID'];
-$_SESSION['CoachID'] = $CoachID;
-
-// Fetch client data from database
-$sql = "SELECT UserID, UserName, User_phone, UserAge, UserGender, UserHeight, currentweight, targetweight, password, User_healthgoal
-        FROM user
-        WHERE CoachID = '$CoachID'
-        ORDER BY UserName ASC";
-$result = $conn->query($sql);
 
 ?>
 
@@ -30,7 +21,14 @@ $result = $conn->query($sql);
 </head>
 <body>
 
-
+<?php
+// Fetch client data from database
+$sql = "SELECT UserID, UserName, User_phonenumber, UserAge, UserGender, UserHeight, UserWeight, User_healthgoal, UserActivity
+        FROM user2
+        WHERE CoachID = '$CoachID'
+        ORDER BY name ASC";
+$result = $conn->query($sql);
+?>
     <div id="wrapper">
         <div id="image-container">
             <header class="navbar">
@@ -39,7 +37,7 @@ $result = $conn->query($sql);
                     <ul>
                         <li><a href="home.php">Home</a></li>
                         <li><a href="aboutus.php">About Us</a></li>
-                        <li><a href="bmi.php">BMI Calculator</a></li>
+                        <li><a href="bmi.php">BMI Caclculator</a></li>
                         <li><a href="login.php" class="login-btn">Log In</a></li>
                     </ul>
                 </nav>
@@ -47,8 +45,8 @@ $result = $conn->query($sql);
 
             <section class="coach-section">
                 <article>
-                    <header><h2>| Welcome, <?= htmlspecialchars($coachName) ?></h2>
-                    <p><a href="register_user.php" style="text-decoration: underline; color: blue;">Register a User</a></p>
+                    <header><h2>| Welcome, Coach<?= htmlspecialchars($username) ?></h2>
+                    <p><a href="register_client.php" style="text-decoration: underline; color: blue;">Register a Client</a></p>
                 </header>
 
                     <div class="coach-box">
@@ -59,7 +57,6 @@ $result = $conn->query($sql);
                                 <th>Age</th>
                                 <th>Current Weight</th>
                                 <th>Target Weight</th>
-                                <th> Health Goal</th>
                                 <th>Contact</th>
                                 <th>Gender</th>
                                 <th>Activity</th>
@@ -72,21 +69,22 @@ $result = $conn->query($sql);
                                             <a href="view_progress.php?user_id=<?= $row['UserID'] ?>">
                                             <?= htmlspecialchars($row['UserName']) ?></a></td>
                                         <td><?=$row['UserAge'] ?></td>
-                                        <td><?=$row['currentweight']?> kg </td>
-                                        <td><?=$row['targetweight']?> kg </td>
+                                        <td><?=$row['UserWeight']?> kg </td>
                                         <td><?=$row['User_healthgoal'] ?> kg </td>
-                                        <td><?=$row['User_phone']?></td>
+                                        <td><?=$row['User_phonenumber']?></td>
                                         <td><?=$row['UserGender'] ?></td>
                                         <td><?=$row['UserActivity'] ?></td>                      
                                 </tr>
                                 <?php endwhile; ?>
                                 <?php else: ?>
-                                     <tr><td colspan="8">No clients found for this coach.</td></tr>
+                                     <tr><td colspan="7">No clients found for this coach.</td></tr>
                                 <?php endif; ?>
                         </table>
                     </div>
                     </article>
             </section>
+
+           
 
             <footer>
                 <div class="footer-container">

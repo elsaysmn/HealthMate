@@ -6,20 +6,22 @@ body {
     flex: 1;
 }
 
-header{
-    background-color: #1f2b76;
+header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    color: white;
-    flex-wrap: wrap;
-    flex: 1;
+    background-color: #23335a;
+    padding: 10px 20px;
+    color: #90ee90; /*Perkataan Health*/
+}
+
+.highlight {
+    color: #967bb6; /*Perkataan Mate*/
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+    font-size: 1.5rem; /*Sizing HealthMate*/
+    font-weight: bold;
 }
 
 .logo span {
@@ -52,7 +54,8 @@ header{
 .nav-bar a:hover{
   background-color: #d5c3e5; 
   color: #1f2b76;
-  border-radius: 4px;
+  padding: 5px 13px;
+  border-radius: 10px;
 }
 
 .login-btn {
@@ -119,6 +122,19 @@ header{
   margin-bottom: 15px;
 }
 
+.product-section {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  color: #1f2b76;
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
 .product-image{
   display: flex;
   align-items: center;
@@ -130,8 +146,7 @@ header{
   gap: 10px;               
   border: 1px solid #ccc;       
   border-radius: 20px;   
-  
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -140,14 +155,16 @@ header{
   max-width: 100%;
   height: auto;
   border-radius: 5px;
+  object-fit:cover;
 }
 
 .image-slider {
   display: flex;
   align-items: center;
-  width: 500px;
+  width: 100%;
   max-width: 500px;
-  height: 420px;
+  height: auto;
+  aspect-ratio: 5 / 4;
   overflow:hidden;
   position: relative;
 }
@@ -184,15 +201,24 @@ header{
   color: #6777E5;
 }
 
-
 footer {
   background-color: #1f2b76;
   padding: 20px;
-  text-align: right;
+  text-align: center;
   color: grey;
 }
 
 footer .socials img {
-  width: 30px;
-  margin: 0 10px;
+  width: 20px;
+  gap: 15px;
+  margin-inline: 0 20px;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: grey;
+    text-decoration: none;
 }

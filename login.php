@@ -27,36 +27,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Invalid role");
     }
 
-    $sql = "SELECT * 
-            FROM $table 
-            WHERE $usernameField = '$username'";
+    $sql = "SELECT * FROM $table WHERE $usernameField = '$username'";
     $result = $conn->query($sql);
 
     if ($result && $result->num_rows == 1) {
         $user = $result->fetch_assoc();
 
         if (password_verify($password, $user['password'])) {
-            $_SESSION["role"] = $role;
-            $_SESSION["username"] = $user[$usernameField];
-            $_SESSION["user_id"] = $user[$idField];
+    $_SESSION["role"] = $role;
+    $_SESSION["username"] = $user[$usernameField];
+    $_SESSION["user_id"] = $user[$idField];
 
-        if ($role == "Coach") {
-           $_SESSION["CoachID"] = $user[$idField];
-            }
-
-        header("Location: {$role}.php");
-        exit(); 
-        } else {
-            echo "Login Failed: Wrong password";
-            session_unset();
-        }
-    } else {
-        echo "<p style='color: red;'>Login Failed: User not found";
-        session_unset();
+    // Redirect user ikut role
+    if ($role == "Admin") {
+        header("Location: admin.php");
+        exit();
+    } elseif ($role == "Coach") {
+        header("Location: coach.php");
+        exit();
+    } elseif ($role == "User") {
+        header("Location: user.php");
+        exit();
     }
-
-    header("Location: {$role}.php");
-    exit();
+}
+}
 }
 ?>
 
@@ -78,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li><a href="home.php">Home</a></li>
                         <li><a href="aboutus.php">About Us</a></li>
                         <li><a href="bmi.php">BMI Calculator</a></li>
+                        <li><a href="login.php" class="login-btn">Log In</a></li>
                     </ul>
                 </nav>
             </header>
@@ -115,14 +110,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <input class="btn" type="submit" name="submit" value="Log In">
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td colspan="2" style="text-align: center;">
-                                        <a href ="register_coach.php" class ="regCoach-btn">Sign Up Coach</a>
-                                        <a href ="register_admin.php" class ="regAdmin-btn">Sign Up Admin</a>
-                                    </td>
-                                </tr>
                             </table>
                         </form>
+                            <p class="center"><b>Sign Up <a href="register_coach.php">Coach </a></b>
+                        <script>
+                            function togglePass() {
+                                var input = document.getElementById("pass");
+                                if (input.type === "password") {
+                                    input.type = "text";
+                                } else {
+                                    input.type = "password";
+                                }
+                            }
+                        </script>
+                        <p class="center"><b>Sign Up <a href="registerAdmin.php">Admin </a></b>
                         <script>
                             function togglePass() {
                                 var input = document.getElementById("pass");
