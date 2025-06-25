@@ -41,8 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($role == "User") {
     $_SESSION["UserID"] = $user[$idField]; 
+    header("Location: user_bmi.php");
+    exit();
 }
-
 
         if ($role == "Coach") {
            $_SESSION["CoachID"] = $user[$idField];
