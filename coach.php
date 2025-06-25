@@ -4,10 +4,19 @@ include('connect.php');
 
 //Check if coach logs in
 if(!isset($_SESSION['CoachID'])) {
-    header("Location: login.php");
+    header("Location: coach.php");
     exit();
 }
+$coachName = $_SESSION['username'];
 $CoachID = $_SESSION['CoachID'];
+$_SESSION['CoachID'] = $CoachID;
+
+// Fetch client data from database
+$sql = "SELECT UserID, UserName, User_phone, UserAge, UserGender, UserHeight, currentweight, targetweight, password, User_healthgoal
+        FROM user
+        WHERE CoachID = '$CoachID'
+        ORDER BY UserName ASC";
+$result = $conn->query($sql);
 
 ?>
 
@@ -21,14 +30,6 @@ $CoachID = $_SESSION['CoachID'];
 </head>
 <body>
 
-<?php
-// Fetch client data from database
-$sql = "SELECT UserID, UserName, User_phonenumber, UserAge, UserGender, UserHeight, UserWeight, User_healthgoal, UserActivity
-        FROM user2
-        WHERE CoachID = '$CoachID'
-        ORDER BY name ASC";
-$result = $conn->query($sql);
-?>
     <div id="wrapper">
         <div id="image-container">
             <header class="navbar">
@@ -45,7 +46,7 @@ $result = $conn->query($sql);
 
             <section class="coach-section">
                 <article>
-                    <header><h2>| Welcome, Coach<?= htmlspecialchars($username) ?></h2>
+                    <header><h2>| Welcome, <?= htmlspecialchars($username) ?></h2>
                     <p><a href="register_client.php" style="text-decoration: underline; color: blue;">Register a Client</a></p>
                 </header>
 
@@ -53,15 +54,17 @@ $result = $conn->query($sql);
                         <h4>Client's Table</h4>
                         <table>
                             <tr>
-                                <th>Name</th>
+                                 <th>Name</th>
                                 <th>Age</th>
                                 <th>Current Weight</th>
                                 <th>Target Weight</th>
+                                <th>Health Goal</th>
                                 <th>Contact</th>
                                 <th>Gender</th>
                                 <th>Activity</th>
                             </tr>
                            
+                            
                             <?php if ($result->num_rows > 0): ?>
                                 <?php while($row = $result->fetch_assoc()): ?>
                                     <tr>
@@ -69,15 +72,16 @@ $result = $conn->query($sql);
                                             <a href="view_progress.php?user_id=<?= $row['UserID'] ?>">
                                             <?= htmlspecialchars($row['UserName']) ?></a></td>
                                         <td><?=$row['UserAge'] ?></td>
-                                        <td><?=$row['UserWeight']?> kg </td>
+                                        <td><?=$row['currentweight']?> kg </td>
+                                        <td><?=$row['targetweight']?> kg </td>
                                         <td><?=$row['User_healthgoal'] ?> kg </td>
-                                        <td><?=$row['User_phonenumber']?></td>
+                                        <td><?=$row['User_phone']?></td>
                                         <td><?=$row['UserGender'] ?></td>
                                         <td><?=$row['UserActivity'] ?></td>                      
                                 </tr>
                                 <?php endwhile; ?>
                                 <?php else: ?>
-                                     <tr><td colspan="7">No clients found for this coach.</td></tr>
+                                     <tr><td colspan="8">No clients found for this coach.</td></tr>
                                 <?php endif; ?>
                         </table>
                     </div>
