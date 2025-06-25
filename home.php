@@ -29,10 +29,10 @@
                     <button id="prevBtn" class="scroll-btn left" >&#10094;</button>
 
                     <div class="image-slider"> 
-                        <img class="slide active" src="pictures/products.png" alt="Amway Products">
-                        <img class="slide" src="pictures/products2.png" alt="Amway products">
-                        <img class="slide" src="pictures/products3.png" alt="Amway products">
-                        <img class="slide" src="pictures/products4.png" alt="Amway products">
+                        <img class="slide active" src="image/products.png" alt="Amway Products">
+                        <img class="slide" src="image/products2.png" alt="Amway products">
+                        <img class="slide" src="image/products3.png" alt="Amway products">
+                        <img class="slide" src="image/products4.png" alt="Amway products">
                     </div>
                     <button id="nextBtn" class="scroll-btn right">&#10095;</button>
                 </div>
