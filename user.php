@@ -111,6 +111,8 @@ th { background: #2c2c63; color: white; }
 footer { background-color: #2c2c63; color: white; padding: 20px; text-align: center; margin-top: 40px; }
 .footer-links a { color: #c084fc; text-decoration: none; margin: 0 10px; }
 .footer-links a:hover { text-decoration: underline; }
+.logout-btn { background-color: #6378c2; padding: 5px 13px; border-radius: 10px; font-weight: bold;
+}
 </style>
 </head>
 <body>
@@ -121,7 +123,7 @@ footer { background-color: #2c2c63; color: white; padding: 20px; text-align: cen
     <a href="home.php">Home</a>
     <a href="aboutus.php">About</a>
     <a href="bmi.php">BMI</a>
-    <a href="#">Profile</a>
+    <a href="logout.php" class="logout-btn">Log Out</a>
   </nav>
 </header>
 
