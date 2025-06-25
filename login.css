@@ -1,0 +1,135 @@
+body {
+    background-image: linear-gradient(to bottom,white, rgb(150, 148, 148), white);
+    margin: 0;
+}
+
+.navbar {
+    background-color: #2b305f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    font-family: Arial, sans-serif;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    background-color: #a4a8d3;
+    color: #2b305f;
+    padding: 5px 13px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.login-btn {
+    background-color: #6378c2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+section {
+    margin: 25px;
+}
+
+h2 {
+    color: #2f3563;
+    margin-left: 35px;
+    font-weight: bold;
+    font-family: arial, sans-serif;
+    font-size: 25px;
+}
+
+form table {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #2f3563;
+    padding: 25px;
+    border-radius: 12px;
+    color: rgb(133, 131, 131);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-family: arial, sans-serif;
+    font-weight: bold;
+}
+
+form td{
+    padding: 10px 5px;
+    vertical-align: top;
+}
+
+form label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+form input[type="text"], form input [type="password"], form select {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    box-sizing: border-box;
+}
+
+form input[type="checkbox"] {
+    margin-top: 5px;
+}
+
+form .btn {
+    background-color: #999fd8;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+footer {
+    background-color: #2f3563;
+    padding: 20px;
+    color: white;
+}
+
+.footer-container {
+    margin-left: 80%;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons img {
+    height: 32px;
+    width: 32px;
+}
+.footer-links a{
+    display: flex;
+    gap: 20px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: white;
+}

@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom,white 0%, #a9a9a9 40%, white 100%);
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #23335a;
+    padding: 10px 20px;
+    color: #D4F6DA; /*Perkataan Health*/
+}
+
+.highlight {
+    color: #967bb6; /*Perkataan Mate*/
+}
+
+.logo {
+    font-size: 1.5rem; /*Sizing HealthMate*/
+    font-weight: bold;
+}
+
+/*Placing Home,About Us,BMI Calculator,Login*/
+.navbar {
+    background-color: #2b305f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    font-family: Arial, sans-serif;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    background-color: #a4a8d3;
+    color: #2b305f;
+    padding: 5px 13px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.login-btn {
+    background-color: #6378c2;
+    padding: 5px 13px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+.bmi-section h1 {
+    font-size: 2rem; /*BMI Calculator*/
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem; /*Please enter the details*/
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.bmi-table table {
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/*Zebra Line*/
+.bmi-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.bmi-input {
+    background-color: #23335a;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bmi-input input {
+    padding: 5px;
+    border-radius: 5px;   
+    border: none;
+}
+
+.bmi-input button {
+    background-color: #5a77d6;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bmi-result {
+    background-color: #23335a;
+    color: white;
+    padding: 20px;     
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin: auto;        
+}
+
+.bmi-table,
+.bmi-input,
+.bmi-result {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.bmi-chart img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        justify-content: center;
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+footer {
+    background-color: #23335a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-icons a img {
+    width: 24px;
+    margin: 0 5px;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
