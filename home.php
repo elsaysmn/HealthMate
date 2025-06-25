@@ -55,10 +55,10 @@
 
     <footer>
         <div class="socials">
-            <img src="instagram.png" alt="Instagram">
-            <img src="twitter.png" alt="Twitter">
-            <img src="pictures/facebook.png" alt="Facebook">
-            <img src="pictures/youtube.png" alt="Youtube">           
+            <img src="image/instagram.png" alt="Instagram">
+            <img src="image/twitter.png" alt="Twitter">
+            <img src="image/pictures/facebook.png" alt="Facebook">
+            <img src="image/pictures/youtube.png" alt="Youtube">           
         </div>
 
         <h5>Terms & Conditions         Privacy Policies</h5>
