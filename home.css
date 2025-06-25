@@ -1,189 +1,238 @@
+/* Updated home.css to match aboutus.css */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: whitesmoke;
-    color: #333;
-    flex: 1;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+  color: #333;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #23335a;
-    padding: 10px 20px;
-    color: #90ee90; /*Perkataan Health*/
-}
-
-.highlight {
-    color: #967bb6; /*Perkataan Mate*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #23335a;
+  padding: 15px 30px;
+  color: white;
 }
 
 .logo {
-    font-size: 1.5rem; /*Sizing HealthMate*/
-    font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #dda0dd;
 }
 
 .logo span {
-  color: #d0b7ee; /* violet color */
-}
-
-.title {
-    font-size: 24px;
-    font-weight: bold;
+  color: #90ee90;
 }
 
 .nav-bar {
   display: flex;
   align-items: center;
-  gap: 20px; 
-  margin: 0;
-  padding: 0;
-  align-items: center;
+  gap: 20px;
 }
 
-.nav-bar a { 
+.nav-bar a {
   color: white;
   text-decoration: none;
-  font-family:'Arial';
-  font-weight: 850;
+  font-weight: bold;
   padding: 6px 12px;
+  border-radius: 8px;
   transition: background-color 0.3s;
 }
 
-.nav-bar a:hover{
-  background-color: #d5c3e5; 
-  color: #1f2b76;
-  padding: 5px 13px;
-  border-radius: 10px;
+.nav-bar a:hover {
+  background-color: rgba(106, 124, 184, 0.644);
 }
 
 .login-btn {
-  padding: 10px 20px;
-  background-color: #818ac5;
+  background-color: #5e78c0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 850;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
-.login-btn:hover{
-    background-color: #b4bbc5;
+.login-btn:hover {
+  background-color: rgba(117, 138, 207, 0.644);
 }
 
 .home-section {
   display: flex;
   padding: 40px;
-  background: linear-gradient(to right, #8283bc,#ffffff);
+  background: linear-gradient(to right, #4c4d8e, #ffffff);
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
 }
 
-.container{
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 0 20px;
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 30px;
 }
 
-.about-wrapper{
-  display:flex;
+.about-wrapper {
+  display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 40px;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-
-.about-section{ 
+.about-section {
   display: flex;
   flex: 1;
   gap: 60px;
-  padding-right: 20px;
 }
 
-.amway-logo{
-  max-width: 350px;
+/* Picture Slider Styling */
+.product-image {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.image-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: auto;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+.slide.active {
+    display: block;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(35, 51, 90, 0.7);
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(35, 51, 90, 0.9);
+}
+
+.scroll-btn.left {
+    left: 10px;
+}
+
+.scroll-btn.right {
+    right: 10px;
+}
+
+.amway-logo {
+  max-width: 400px;
   margin-top: 20px;
   margin-bottom: 20px;
-  display: flex-end;
 }
 
 .about-amway {
-  max-width:450px;
-  text-align: left; 
-} 
-
-
-.about-amway h2{
-  color:#1f2b76;
+  max-width: 500px;
+  text-align: justify;
+  font-family: 'Poppins', sans-serif;
 }
 
-.about-amway p{
+.about-amway h2 {
+  font-size: 28px;
+  color: #1e2d7d;
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.about-amway p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.highlight-bar {
+  display: inline-block;
+  width: 5px;
+  height: 35px;
+  background-color: black;
+  margin-right: 10px;
 }
 
 .product-section {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .product-title {
   font-size: 1.5rem;
   color: #1f2b76;
   text-align: left;
-  margin-left: 10px;
   margin-bottom: 10px;
 }
 
-.product-image{
+.product-image {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
-  width: 100%;
-  background-color: white;    
-  padding: 10px; 
-  gap: 10px;               
-  border: 1px solid #ccc;       
-  border-radius: 20px;   
-  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px;
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .product-image img {
-  display: block;
   max-width: 100%;
   height: auto;
   border-radius: 5px;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 .image-slider {
   display: flex;
   align-items: center;
-  width: 100%;
   max-width: 500px;
-  height: auto;
+  width: 100%;
   aspect-ratio: 5 / 4;
-  overflow:hidden;
+  overflow: hidden;
   position: relative;
 }
 
-.slide{
+.slide {
   display: none;
   width: 100%;
   height: auto;
-  border-radius: 10px;
   position: absolute;
-  transition: opacity 0.8s ease-in-out;
-  pointer-events: none;
   opacity: 0;
-  
+  transition: opacity 0.8s ease-in-out;
 }
 
 .slide.active {
   opacity: 1;
-  pointer-events: all;
   z-index: 1;
 }
 
@@ -194,7 +243,6 @@ header {
   cursor: pointer;
   color: #1f2b76;
   padding: 10px;
-  transition: color 0.3s;
 }
 
 .scroll-btn:hover {
@@ -202,23 +250,27 @@ header {
 }
 
 footer {
-  background-color: #1f2b76;
-  padding: 20px;
+  background-color: #23335a;
+  color: white;
   text-align: center;
-  color: grey;
+  padding: 20px;
 }
 
-footer .socials img {
-  width: 20px;
-  gap: 15px;
-  margin-inline: 0 20px;
+.social-icons img {
+  width: 24px;
+  margin: 0 10px;
 }
 
 .footer-links {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .footer-links a {
-    color: grey;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
 }

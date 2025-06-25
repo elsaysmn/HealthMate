@@ -1,4 +1,3 @@
-/* Reset and base styles */
 * {
     box-sizing: border-box;
 }
@@ -6,36 +5,27 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #4c4d8e, #ffffff); /* Matching About Us gradient */
+    background: linear-gradient(to right, #4c4d8e, #ffffff);
     color: #23335a;
 }
 
-/* Header section */
-header {
+.navbar {
+    background-color: #23335a;
+    color: #90ee90;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #23335a;
-    padding: 10px 20px;
-    color: #D4F6DA;
-}
-
-.highlight {
-    color: #967bb6;
+    padding: 15px 30px;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #90ee90; 
 }
 
-/* Navbar */
-.navbar {
-    background-color: #2b305f;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
+.logo .highlight {
+    color: #dda0dd; 
 }
 
 .nav-links ul {
@@ -59,7 +49,6 @@ header {
     background-color: rgba(106, 124, 184, 0.644);
 }
 
-/* Login button */
 .login-btn {
     background-color: #5e78c0;
     padding: 6px 12px;
@@ -74,7 +63,6 @@ header {
     background-color: rgba(117, 138, 207, 0.644);
 }
 
-/* Main content */
 main {
     padding: 20px;
 }
@@ -98,7 +86,6 @@ main {
     margin-bottom: 30px;
 }
 
-/* BMI Table */
 .bmi-table table {
     width: 300px;
     background-color: white;
@@ -110,7 +97,6 @@ main {
     background-color: #f2f2f2;
 }
 
-/* Input section */
 .bmi-input {
     background-color: #23335a;
     color: white;
@@ -127,7 +113,6 @@ main {
     border: none;
 }
 
-/* Matching button from About Us */
 .bmi-input button {
     background-color: #5e78c0;
     color: white;
@@ -143,7 +128,6 @@ main {
     background-color: rgba(117, 138, 207, 0.644);
 }
 
-/* BMI Result Box */
 .bmi-result {
     background-color: #23335a;
     color: white;
@@ -155,7 +139,6 @@ main {
     margin: auto;
 }
 
-/* Spacing for layout */
 .bmi-table,
 .bmi-input,
 .bmi-result {
@@ -163,7 +146,6 @@ main {
     margin-right: 10px;
 }
 
-/* BMI Chart image */
 .bmi-chart img {
     max-width: 100%;
     height: auto;
@@ -171,7 +153,6 @@ main {
     margin: 0 auto;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     nav ul {
         justify-content: center;
@@ -183,7 +164,6 @@ main {
     }
 }
 
-/* Footer */
 footer {
     background-color: #23335a;
     color: white;

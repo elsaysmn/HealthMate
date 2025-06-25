@@ -47,10 +47,10 @@
 </section>
 <footer>
         <div class="social-icons">
-            <a href="#"><img src="image/instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="image/youtube.png" alt="YouTube"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="image/instagram.png" alt="Instagram"></a>
+            <a href="https://x.com/" target="_blank"><img src ="image/twitter.png" alt="Twitter"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src ="image/facebook.png" alt="Facebook"></a>
+            <a href="http://www.youtube.com/" target="_blank"><img src ="image/youtube.png" alt="YouTube"></a><br>
         </div>
         <div class="footer-links">
             <a href="#">Terms & Conditions</a>
