@@ -46,7 +46,7 @@ $result = $conn->query($sql);
 
             <section class="coach-section">
                 <article>
-                    <header><h2>| Welcome, <?= htmlspecialchars($username) ?></h2>
+                    <header><h2>| Welcome, <?= htmlspecialchars($coachName) ?></h2>
                     <p><a href="register_user.php" style="text-decoration: underline; color: blue;">Register a Client</a></p>
                 </header>
 
