@@ -45,7 +45,7 @@
 
 </div>
             <div class="about-section">
-                <img src="pictures/logo.png" alt="Amway Logo"  class="amway-logo">
+                <img src="image/logo.png" alt="Amway Logo"  class="amway-logo">
                 <div class="about-amway"> 
                 <h2> | About Amway </h2>
                 <p>Amway is a global multi-level marketing (MLM) company that sells health, beauty, and home care products. Founded in 1959 in the United States, it operates in over 100 countries and territories.</p>
