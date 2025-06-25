@@ -34,12 +34,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result && $result->num_rows == 1) {
         $user = $result->fetch_assoc();
-
-       
         if (password_verify($password, $user['password'])) {
             $_SESSION["role"] = $role;
             $_SESSION["username"] = $user[$usernameField];
             $_SESSION["user_id"] = $user[$idField];
+
+    if ($role == "User") {
+    $_SESSION["UserID"] = $user[$idField]; 
+}
+
 
         if ($role == "Coach") {
            $_SESSION["CoachID"] = $user[$idField];
