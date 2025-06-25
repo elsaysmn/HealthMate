@@ -22,7 +22,7 @@
 
     <main>
         <section class="bmi-section">
-            <h1>BMI Calculator</h1>
+            <h1> | BMI Calculator</h1>
             <p class="subtitle">Please enter the details:</p>
 
             <div class="container">
