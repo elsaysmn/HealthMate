@@ -40,7 +40,7 @@ $result = $conn->query($sql);
                         <li><a href="home.php">Home</a></li>
                         <li><a href="aboutus.php">About Us</a></li>
                         <li><a href="bmi.php">BMI Calculator</a></li>
-                        <li><a href="login.php" class="login-btn">Log In</a></li>
+                        <li><a href="logout.php" class="logout-btn">Log Out</a></li>
                     </ul>
                 </nav>
             </header>
