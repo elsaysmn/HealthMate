@@ -45,21 +45,18 @@
     <img src="pictures/HealthMate.png" alt="Amway Logo" />
   </div>
 </section>
-
-
-  <footer class="footer">
-      <div class="socials">
-            <img src="image/instagram.png" alt="Instagram">
-            <img src="image/twitter.png" alt="Twitter">
-            <img src="image/facebook.png" alt="Facebook">
-            <img src="image/youtube.png" alt="Youtube">           
+<footer>
+        <div class="social-icons">
+            <a href="#"><img src="image/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="image/youtube.png" alt="YouTube"></a>
         </div>
-
-    <div class="link">
-      <a href="#">Terms & Conditions</a>
-      <a href="#">Privacy Policies</a>
-    </div>
-   </footer>
+        <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policies</a>
+        </div>
+    </footer>
 
 </body>
 </html>
