@@ -2,18 +2,43 @@
 include("connect.php");
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $coachID = $_POST["userID"];
-    $coachName = $_POST["userName"];
-    $coachPhonenumb = $_POST["userPhonenumb"];
+    $UserID = $_POST["userID"];
+    $UserName = $_POST["userName"];
+    $User_phone = $_POST["user_Phone"];
+    $UserAge = $_POST["userAge"];
+    $UserGender = $_POST["userGender"];
+    $UserHeight = $_POST["userHeight"];
+    $currentWeight = $_POST["currentWeight"];
+    $targetWeight = $_POST["targetWeight"];
     $password = $_POST["password"];
+    $User_healthgoal = $_POST["user_healthgoal"];
+
+    $Plan_StartDate = $_POST['Plan_StartDate'];
+    $Plan_EndDate = $_POST['Plan_EndDate'];
+
+    $ProgressDate = $_POST['Date'];
+    $Progress_Weight = $_POST['Progress_Weight'];
+    $Progress_Notes = $_POST['Progress_Notes'];
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO coach(CoachID, CoachName, CoachEmail, Coach_phonenumb, password)
-            VALUES ('$coachID', '$coachName', '$coachEmail', '$coachPhonenumb', '$hashedPassword')";
+    $sql = "INSERT INTO user(UserID, UserName, User_phone, UserAge, UserGender, UserHeight, currentweight, targetweight, password, User_healthgoal)
+            VALUES ('$UserID', '$UserName', '$UserPhonenumb', '$UserAge', '$UserGender', '$UserHeight','$currentWeight', '$targetWeight', '$hashedPassword', '$User_healthgoal')";
 
-   if(mysqli_query($conn, $sql)){
-       echo "<p style='color:green;'>Coach registered successfully!</p>";
+
+    if (mysqli_query($conn, $sql_user)) {
+        // Insert into user_plan
+        $sql_plan = "INSERT INTO user_plan (UserID, Plan_StartDate, Plan_EndDate)
+                     VALUES ('$UserID', '$Plan_StartDate', '$Plan_EndDate')";
+        mysqli_query($conn, $sql_plan);
+
+        // Insert into progress_record
+        $sql_progress = "INSERT INTO progress_record (UserID, Date, Weight, Notes)
+                         VALUES ('$UserID', '$ProgressDate', '$Progress_Weight', '$Progress_Notes')";
+        mysqli_query($conn, $sql_progress);
+
+
+       echo "<p style='color:green;'>User registeration successful!</p>";
     } else {
         echo "<p style='color:red;'>Error: " . mysqli_error($conn) . "</p>";
     }
@@ -25,32 +50,54 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Coach</title>
+    <title>Register User</title>
 </head>
 <body>
     <section>
         <div class="container">
-            <h2>Welcome Coach. Please register!</h2>
-            <form action="register_coach.php" method="POST"><br>
+            <h2>Welcome Coach. Please register a user!</h2>
+            <form action="register_user.php" method="POST"><br>
             <table>
                 <tr>
-                    <th> Coach ID :</th>
-                    <td><input type="text" name ="coachID" required></td>
+                    <th colspan="2"> User Info</th></tr>
+                <tr>
+                    <th> UserID :</th>
+                    <td><input type="text" name ="UserID" required></td>
                 </tr>
 
                 <tr>
-                    <th> Coach Name :</th>
-                    <td><input type="text" name ="coachName" required></td>
+                    <th> Name :</th>
+                    <td><input type="text" name ="UserName" required></td>
                 </tr>
 
                  <tr>
-                    <th> Email : </th>
-                    <td><input type="text" name ="coachEmail" required></td>
+                    <th> Phone Number : </th>
+                    <td><input type="text" name ="User_phone" required></td>
                 </tr>
 
                  <tr>
-                    <th> Phone Number :</th>
-                    <td><input type="text" name ="coachPhonenumb"></td>
+                    <th> Age :</th>
+                    <td><input type="text" name ="UserAge"></td>
+                </tr>
+
+                     <tr>
+                    <th> Gender :</th>
+                    <td><input type="text" name ="UserGender" required></td>
+                </tr>
+
+                <tr>
+                    <th> Height in m:</th>
+                    <td><input type="text" name ="UserHeight" required></td>
+                </tr>
+
+                 <tr>
+                    <th> Current Weight : </th>
+                    <td><input type="text" name ="currentweight" required></td>
+                </tr>
+
+                 <tr>
+                    <th> Target Weight :</th>
+                    <td><input type="text" name ="targetweight"></td>
                 </tr>
 
                   <tr>
@@ -58,9 +105,41 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                     <td><input type="password" name ="password"></td>
                 </tr>
 
+                <tr>
+                    <th> Health Goal :</th>
+                    <td><input type="text" name ="User_healthgoal"></td>
+                </tr>
+
+                <tr>
+                    <th> Coach ID : </th>
+                    <td><input type="text" name="CoachID"></td>
+                </tr>
+ 
+                <tr><th colspan="2">Plan Info</th></tr>
+                    <tr>
+                        <th> Plan Start Date: </th>
+                        <td><input type="date" name="Plan_StartDate"></td>
+                    </tr>
+
+                     <tr>
+                        <th> Plan End Date: </th>
+                        <td><input type="date" name="Plan_EndDate"></td>
+                    </tr>
+
+                <tr><th colspan="2">Diet Plan</th></tr>
+                    <tr> 
+                        <th> Diet ID : </th>
+                        <td><input type="text" name="DietID"></td>
+                    </tr>
+
+                    <tr> 
+                        <th> Diet Goal Type : </th>
+                        <td><input type="text" name="diet_goaltype"></td>
+                    </tr>
+
                   <tr>
           <td colspan="2">
-            <input type="submit" value="Submit" name="submit">
+            <input type="submit" value="Register" name="submit">
           </td>
 
          <a href ="login.php" class ="login-btn">Log In</a>
@@ -72,20 +151,5 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 </section>
 </body>
-
-<footer>
-    <div class="footer-container">
-    <div class="social-icons">
-        <a href="https://www.instagram.com/" target="_blank"><img src="image/instagram.png" alt="Instagram"></a>
-        <a href="https://x.com/" target="_blank"><img src ="image/twitter.png" alt="Twitter"></a>
-        <a href="https://www.facebook.com/" target="_blank"><img src ="image/facebook.png" alt="Facebook"></a>
-        <a href="http://www.youtube.com/" target="_blank"><img src ="image/youtube.png" alt="YouTube"></a><br>
-    </div>
-        <div class="footer-links">
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Privacy Policies</a>
-        </div>
-    </div>
-</footer>
 </html>
 
