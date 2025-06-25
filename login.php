@@ -27,30 +27,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Invalid role");
     }
 
-    $sql = "SELECT * FROM $table WHERE $usernameField = '$username'";
+    $sql = "SELECT * 
+            FROM $table 
+            WHERE $usernameField = '$username'";
     $result = $conn->query($sql);
 
     if ($result && $result->num_rows == 1) {
         $user = $result->fetch_assoc();
 
+       
         if (password_verify($password, $user['password'])) {
-    $_SESSION["role"] = $role;
-    $_SESSION["username"] = $user[$usernameField];
-    $_SESSION["user_id"] = $user[$idField];
+            $_SESSION["role"] = $role;
+            $_SESSION["username"] = $user[$usernameField];
+            $_SESSION["user_id"] = $user[$idField];
 
-    // Redirect user ikut role
-    if ($role == "Admin") {
-        header("Location: admin.php");
-        exit();
-    } elseif ($role == "Coach") {
-        header("Location: coach.php");
-        exit();
-    } elseif ($role == "User") {
-        header("Location: user.php");
-        exit();
+        if ($role == "Coach") {
+           $_SESSION["CoachID"] = $user[$idField];
+            }
+
+        header("Location: {$role}.php");
+        exit(); 
+        } else {
+            echo "Login Failed: Wrong password";
+            session_unset();
+        }
+    } else {
+        echo "<p style='color: red;'>Login Failed: User not found";
+        session_unset();
     }
-}
-}
+
+    header("Location: {$role}.php");
+    exit();
 }
 ?>
 
