@@ -29,16 +29,16 @@
                     <button id="prevBtn" class="scroll-btn left" >&#10094;</button>
 
                     <div class="image-slider"> 
-                        <img class="slide active" src="pictures/products.png" alt="Amway Products">
-                        <img class="slide" src="pictures/products2.png" alt="Amway products">
-                        <img class="slide" src="pictures/products3.png" alt="Amway products">
-                        <img class="slide" src="pictures/products4.png" alt="Amway products">
+                        <img class="slide active" src="image/products.png" alt="Amway Products">
+                        <img class="slide" src="image/products2.png" alt="Amway products">
+                        <img class="slide" src="image/products3.png" alt="Amway products">
+                        <img class="slide" src="image/products4.png" alt="Amway products">
                     </div>
                     <button id="nextBtn" class="scroll-btn right">&#10095;</button>
                 </div>
 
             <div class="about-section">
-                <img src="pictures/logo.png" alt="Amway Logo"  class="amway-logo">
+                <img src="image/logo.png" alt="Amway Logo"  class="amway-logo">
                 <div class="about-amway"> 
                 <h2> | About Amway </h2>
                 <p>Amway is a global multi-level marketing (MLM) company that sells health, beauty, and home care products. Founded in 1959 in the United States, it operates in over 100 countries and territories.</p>
