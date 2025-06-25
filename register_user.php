@@ -78,8 +78,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <tr>
                     <td colspan="2" style="text-align: center;">
-                        <input type="submit" value="Register" name="submit">
                         <a href="login.php" class="back-btn">Back</a>
+                        <input type="submit" value="Register" name="submit">
                     </td>
                 </tr>
             </table>
