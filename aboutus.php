@@ -49,10 +49,10 @@
 
   <footer class="footer">
       <div class="socials">
-            <img src="image/instagram.png" alt="Instagram">
-            <img src="image/twitter.png" alt="Twitter">
-            <img src="image/facebook.png" alt="Facebook">
-            <img src="image/youtube.png" alt="Youtube">           
+            <img src="pictures/instagram.png" alt="Instagram">
+            <img src="pictures/twitter.png" alt="Twitter">
+            <img src="pictures/facebook.png" alt="Facebook">
+            <img src="pictures/youtube.png" alt="Youtube">           
         </div>
 
     <div class="link">

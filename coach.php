@@ -4,19 +4,10 @@ include('connect.php');
 
 //Check if coach logs in
 if(!isset($_SESSION['CoachID'])) {
-    header("Location: coach.php");
+    header("Location: login.php");
     exit();
 }
-$coachName = $_SESSION['username'];
 $CoachID = $_SESSION['CoachID'];
-$_SESSION['CoachID'] = $CoachID;
-
-// Fetch client data from database
-$sql = "SELECT UserID, UserName, User_phonenumber, UserAge, UserGender, UserHeight, UserWeight, password, User_healthgoal
-        FROM user
-        WHERE CoachID = '$CoachID'
-        ORDER BY UserName ASC";
-$result = $conn->query($sql);
 
 ?>
 
@@ -30,7 +21,14 @@ $result = $conn->query($sql);
 </head>
 <body>
 
-
+<?php
+// Fetch client data from database
+$sql = "SELECT UserID, UserName, User_phonenumber, UserAge, UserGender, UserHeight, UserWeight, User_healthgoal, UserActivity
+        FROM user2
+        WHERE CoachID = '$CoachID'
+        ORDER BY name ASC";
+$result = $conn->query($sql);
+?>
     <div id="wrapper">
         <div id="image-container">
             <header class="navbar">
@@ -39,15 +37,15 @@ $result = $conn->query($sql);
                     <ul>
                         <li><a href="home.php">Home</a></li>
                         <li><a href="aboutus.php">About Us</a></li>
-                        <li><a href="bmi.php">BMI Calculator</a></li>
-                        <li><a href="logout.php" class="logout-btn">Log Out</a></li>
+                        <li><a href="bmi.php">BMI Caclculator</a></li>
+                        <li><a href="login.php" class="login-btn">Log In</a></li>
                     </ul>
                 </nav>
             </header>
 
             <section class="coach-section">
                 <article>
-                    <header><h2>| Welcome, <?= htmlspecialchars($coachName) ?></h2>
+                    <header><h2>| Welcome, Coach<?= htmlspecialchars($username) ?></h2>
                     <p><a href="register_client.php" style="text-decoration: underline; color: blue;">Register a Client</a></p>
                 </header>
 
@@ -85,6 +83,8 @@ $result = $conn->query($sql);
                     </div>
                     </article>
             </section>
+
+           
 
             <footer>
                 <div class="footer-container">

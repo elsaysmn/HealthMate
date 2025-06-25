@@ -69,7 +69,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       </table>
     </form>
 
-     <p><a href="register_user.php?coachID=<?php echo $_SESSION['user_id'];?>">+ Register a New Client</a></p>
 
 </section>
 </body>
