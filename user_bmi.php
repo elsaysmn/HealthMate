@@ -1,7 +1,11 @@
-?php
+<?php
 session_start();
 require('connect.php'); // contains $conn
 
+if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'User') {
+    header("Location: login.php");
+    exit();
+}
 $username = $_SESSION['username'] ?? 'guest'; // Default username if session missing
 
 $bmiResult = "";
