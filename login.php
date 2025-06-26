@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $role = $_POST["loginAs"];
     $username = $_POST["username"];
     $password = $_POST["password"];
+    $idNo = $_POST["idNo"];
 
     switch($role) {
         case "Admin":
@@ -27,27 +28,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Invalid role");
     }
 
-    $sql = "SELECT * 
-            FROM $table 
-            WHERE $usernameField = '$username'";
+    $sql = "SELECT * FROM $table WHERE $usernameField = '$username'";
     $result = $conn->query($sql);
 
     if ($result && $result->num_rows == 1) {
         $user = $result->fetch_assoc();
+
         if (password_verify($password, $user['password'])) {
             $_SESSION["role"] = $role;
             $_SESSION["username"] = $user[$usernameField];
             $_SESSION["user_id"] = $user[$idField];
 
     if ($role == "User") {
-    $_SESSION["UserID"] = $user[$idField]; 
-    header("Location: user_bmi.php");
-    exit();
-}
-
-        if ($role == "Coach") {
-           $_SESSION["CoachID"] = $user[$idField];
-            }
+        $_SESSION["UserID"] = $user[$idField]; 
+        header("Location: user_bmi.php");
+        exit(); 
+    }
+    
+    if ($role == "Coach") {
+        $_SESSION["CoachID"] = $user[$idField];
+        header("Location: coach.php");
+        exit();
+    }
 
         header("Location: {$role}.php");
         exit(); 
@@ -60,8 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_unset();
     }
 
-    header("Location: {$role}.php");
-    exit();
+    
 }
 ?>
 
