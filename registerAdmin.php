@@ -25,6 +25,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href="registerAdmin.css">
     <title>Register Admin</title>
 </head>
 <body>
@@ -65,5 +66,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 
 </section>
+<footer>
+        <div class="social-icons">
+            <a href="#"><img src="image/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="image/youtube.png" alt="YouTube"></a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policies</a>
+        </div>
+    </footer>
 </body>
 </html>
