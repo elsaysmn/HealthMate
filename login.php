@@ -108,7 +108,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </tr>
                             </table>
                         </form>
-                            <p class="center"><b>Sign Up <a href="register_coach.php">Coach </a></b>
+                            <a href ="register_coach.php" class ="regCoach-btn">Sign Up Coach</a>
+                            <a href ="register_admin.php" class ="regAdmin-btn">Sign Up Coach</a>
                         <script>
                             function togglePass() {
                                 var input = document.getElementById("pass");
