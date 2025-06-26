@@ -34,8 +34,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     
         // Insert into diet_plan
-    $sql_diet_plan = "INSERT INTO diet_plan (DietID, Diet_goaltype)
-                  VALUES ('$DietID', '$diet_goaltype')";
+    $sql_diet_plan = "INSERT INTO diet_plan (Diet_goaltype)
+                  VALUES ('$diet_goaltype')";
     mysqli_query($conn, $sql_diet_plan);
 
 
