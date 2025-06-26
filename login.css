@@ -34,12 +34,15 @@ body {
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 .login-btn {
    background-color: #6378c2;
     padding: 10px 20px;
     border-radius: 5px;
 }
    
+=======
+>>>>>>> 08af3e73fa575256caef9c25224594059a5a713b
 .regCoach-btn, .regAdmin-btn {
     background-color: #999fd8;
     color: white;
