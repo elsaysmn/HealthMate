@@ -7,7 +7,7 @@
   <title>HealthMate | Login</title>
 </head>
 <body>
-  <!-- Header styled like aboutus.php -->
+    
   <div class="bar">
     <div class="logo">Health<sec>Mate</sec></div>
     <div class="nav-links">
@@ -18,7 +18,6 @@
     </div>
   </div>
 
-  <!-- Login Section -->
 <div><h1> | Log In</h1></div>
   <section class="login-section">
     <article>
@@ -64,7 +63,6 @@
     </article>
   </section>
 
-  <!-- Footer styled like aboutus.php -->
   <footer>
     <div class="social-icons">
       <a href="https://www.instagram.com/" target="_blank"><img src="image/instagram.png" alt="Instagram" /></a>
