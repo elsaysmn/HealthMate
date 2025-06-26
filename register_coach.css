@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #4c4d8e, #ffffff);
+    color: #23335a;
+}
+
+.navbar, .bar {
+    background-color: #23335a;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #dda0dd;
+}
+
+.logo sec {
+    color: #90ee90;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #23335a;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(106, 124, 184, 0.644);
+}
+
+.back-btn {
+    background-color: #5e78c0;
+    color: white;
+    padding: 9px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: rgba(117, 138, 207, 0.644);
+}
+
+section {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #1e2d7d;
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form table {
+    width: 100%;
+    background-color: #23335a;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    font-weight: bold;
+    color: white;
+}
+
+form th[colspan="2"] {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+}
+
+form th {
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    text-align: left;
+}
+
+form td {
+    padding: 10px 5px;
+    vertical-align: top;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+}
+
+form input[type="submit"],
+form .btn {
+    background-color: #5e78c0;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover,
+form .btn:hover {
+    background-color: rgba(117, 138, 207, 0.644);
+}
+
+p a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2b305f;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+p a:hover {
+    text-decoration: underline;
+    color: #5e78c0;
+}
+
+/* ✅ Fixed Footer */
+footer {
+    background-color: #23335a;
+    padding: 20px 0; 
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.social-icons img {
+    height: 32px;
+    width: 32px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar, .bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    form table {
+        padding: 20px;
+    }
+}

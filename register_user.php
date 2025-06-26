@@ -2,40 +2,42 @@
 include("connect.php");
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $UserID = $_POST["userID"];
-    $UserName = $_POST["userName"];
-    $User_phone = $_POST["user_Phone"];
-    $UserAge = $_POST["userAge"];
-    $UserGender = $_POST["userGender"];
-    $UserHeight = $_POST["userHeight"];
-    $currentWeight = $_POST["currentWeight"];
-    $targetWeight = $_POST["targetWeight"];
+    $UserID = $_POST["UserID"];
+    $UserName = $_POST["UserName"];
+    $User_phone = $_POST["User_phone"];
+    $UserAge = $_POST["UserAge"];
+    $UserGender = $_POST["UserGender"];
+    $UserHeight = $_POST["UserHeight"];
+    $currentweight = $_POST["currentweight"];
+    $targetweight = $_POST["targetweight"];
     $password = $_POST["password"];
-    $User_healthgoal = $_POST["user_healthgoal"];
+    $User_healthgoal = $_POST["User_healthgoal"];
 
     $Plan_StartDate = $_POST['Plan_StartDate'];
     $Plan_EndDate = $_POST['Plan_EndDate'];
 
-    $ProgressDate = $_POST['Date'];
-    $Progress_Weight = $_POST['Progress_Weight'];
-    $Progress_Notes = $_POST['Progress_Notes'];
+    $DietID = $_POST['DietID'];
+    $diet_goaltype = $_POST['diet_goaltype'];
+
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO user(UserID, UserName, User_phone, UserAge, UserGender, UserHeight, currentweight, targetweight, password, User_healthgoal)
-            VALUES ('$UserID', '$UserName', '$UserPhonenumb', '$UserAge', '$UserGender', '$UserHeight','$currentWeight', '$targetWeight', '$hashedPassword', '$User_healthgoal')";
+            VALUES ('$UserID', '$UserName', '$User_phone', '$UserAge', '$UserGender', '$UserHeight','$currentweight', '$targetweight', '$hashedPassword', '$User_healthgoal')";
 
 
-    if (mysqli_query($conn, $sql_user)) {
+    if (mysqli_query($conn, $sql)) {
         // Insert into user_plan
         $sql_plan = "INSERT INTO user_plan (UserID, Plan_StartDate, Plan_EndDate)
                      VALUES ('$UserID', '$Plan_StartDate', '$Plan_EndDate')";
         mysqli_query($conn, $sql_plan);
 
-        // Insert into progress_record
-        $sql_progress = "INSERT INTO progress_record (UserID, Date, Weight, Notes)
-                         VALUES ('$UserID', '$ProgressDate', '$Progress_Weight', '$Progress_Notes')";
-        mysqli_query($conn, $sql_progress);
+    
+        // Insert into diet_plan
+    $sql_diet_plan = "INSERT INTO diet_plan (Diet_goaltype)
+                  VALUES ('$diet_goaltype')";
+    mysqli_query($conn, $sql_diet_plan);
+
 
 
        echo "<p style='color:green;'>User registeration successful!</p>";
@@ -51,6 +53,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register User</title>
+    <link rel ="stylesheet" href="register_user.css">
 </head>
 <body>
     <section>

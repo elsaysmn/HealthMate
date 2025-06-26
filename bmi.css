@@ -1,36 +1,40 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom,white 0%, #a9a9a9 40%, white 100%);
-    color: #333;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #4c4d8e, #ffffff); /* Matching About Us gradient */
+    color: #23335a;
+}
+
+/* Header section */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #23335a;
     padding: 10px 20px;
-    color: #D4F6DA; /*Perkataan Health*/
+    color: #D4F6DA;
 }
 
 .highlight {
-    color: #967bb6; /*Perkataan Mate*/
+    color: #967bb6;
 }
 
 .logo {
-    font-size: 1.5rem; /*Sizing HealthMate*/
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-/*Placing Home,About Us,BMI Calculator,Login*/
+/* Navbar */
 .navbar {
     background-color: #2b305f;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    font-family: Arial, sans-serif;
 }
 
 .nav-links ul {
@@ -45,34 +49,42 @@ header {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
 .nav-links a:hover {
-    background-color: #a4a8d3;
-    color: #2b305f;
-    padding: 5px 13px;
-    border-radius: 10px;
-    font-weight: bold;
+    background-color: rgba(106, 124, 184, 0.644);
 }
 
+/* Login button */
 .login-btn {
-    background-color: #6378c2;
-    padding: 5px 13px;
-    border-radius: 10px;
+    background-color: #5e78c0;
+    padding: 6px 12px;
+    border-radius: 20px;
     font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
+.login-btn:hover {
+    background-color: rgba(117, 138, 207, 0.644);
+}
+
+/* Main content */
 main {
     padding: 20px;
 }
 
 .bmi-section h1 {
-    font-size: 2rem; /*BMI Calculator*/
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
 .subtitle {
-    font-size: 1.2rem; /*Please enter the details*/
+    font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
@@ -85,18 +97,19 @@ main {
     margin-bottom: 30px;
 }
 
+/* BMI Table */
 .bmi-table table {
     width: 300px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/*Zebra Line*/
 .bmi-table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+/* Input section */
 .bmi-input {
     background-color: #23335a;
     color: white;
@@ -109,30 +122,39 @@ main {
 
 .bmi-input input {
     padding: 5px;
-    border-radius: 5px;   
+    border-radius: 5px;
     border: none;
 }
 
+/* Matching button from About Us */
 .bmi-input button {
-    background-color: #5a77d6;
+    background-color: #5e78c0;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
+.bmi-input button:hover {
+    background-color: rgba(117, 138, 207, 0.644);
+}
+
+/* BMI Result Box */
 .bmi-result {
     background-color: #23335a;
     color: white;
-    padding: 20px;     
+    padding: 20px;
     border-radius: 10px;
     text-align: left;
     display: flex;
     flex-direction: column;
-    margin: auto;        
+    margin: auto;
 }
 
+/* Spacing for layout */
 .bmi-table,
 .bmi-input,
 .bmi-result {
@@ -140,6 +162,7 @@ main {
     margin-right: 10px;
 }
 
+/* BMI Chart image */
 .bmi-chart img {
     max-width: 100%;
     height: auto;
@@ -147,17 +170,19 @@ main {
     margin: 0 auto;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
     nav ul {
         justify-content: center;
     }
-    
+
     .container {
         flex-direction: column;
         align-items: center;
     }
 }
 
+/* Footer */
 footer {
     background-color: #23335a;
     color: white;
