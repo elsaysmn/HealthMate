@@ -45,17 +45,17 @@ body {
 .nav-links a:hover {
   background-color: rgba(106, 124, 184, 0.644);
 }
-.login-btn {
-  background-color: #5e78c0;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-.login-btn:hover {
-  background-color: #748ed0;
+
+.regCoach-btn, .regAdmin-btn {
+    background-color: #999fd8;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
 }
 
 .login-section {

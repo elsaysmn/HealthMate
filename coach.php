@@ -38,17 +38,17 @@ $result = $conn->query($sql);
                     <ul>
                         <li><a href="home.php">Home</a></li>
                         <li><a href="aboutus.php">About Us</a></li>
-                        <li><a href="bmi.php">BMI Caclculator</a></li>
-                        <li><a href="login.php" class="login-btn">Log In</a></li>
+                        <li><a href="bmi.php">BMI Calculator</a></li>
+                        <li><a href="logout.php" class="logout-btn">Log Out</a></li>
                     </ul>
                 </nav>
             </header>
 
             <section class="coach-section">
                 <article>
-                    <header><h2>| Welcome, <?= htmlspecialchars($coachName) ?></h2>
-                    <p><a href="register_user.php" style="text-decoration: underline; color: blue;">Register a Client</a></p>
-                </header>
+                    <header><h2>| Welcome, <?= htmlspecialchars($coachName) ?></h2></header>
+                    <a href ="register_user.php" class ="regUser-btn">Register new User</a>
+                
 
                     <div class="coach-box">
                         <h4>Client's Table</h4>

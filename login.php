@@ -84,7 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li><a href="home.php">Home</a></li>
                         <li><a href="aboutus.php">About Us</a></li>
                         <li><a href="bmi.php">BMI Calculator</a></li>
-                        <li><a href="login.php" class="login-btn">Log In</a></li>
                     </ul>
                 </nav>
             </header>
@@ -122,9 +121,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <input class="btn" type="submit" name="submit" value="Log In">
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: center;">
+                                        <a href ="register_coach.php" class ="regCoach-btn">Sign Up Coach</a>
+                                        <a href ="registerAdmin.php" class ="regAdmin-btn">Sign Up Admin</a>
+                                    </td>
                             </table>
                         </form>
-                            <p class="center"><b>Sign Up <a href="register_coach.php">Coach </a></b>
+                        
                         <script>
                             function togglePass() {
                                 var input = document.getElementById("pass");
@@ -135,17 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 }
                             }
                         </script>
-                        <p class="center"><b>Sign Up <a href="registerAdmin.php">Admin </a></b>
-                        <script>
-                            function togglePass() {
-                                var input = document.getElementById("pass");
-                                if (input.type === "password") {
-                                    input.type = "text";
-                                } else {
-                                    input.type = "password";
-                                }
-                            }
-                        </script>
+                        
                      </div>
                    </article>
             </section>
