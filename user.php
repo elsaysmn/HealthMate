@@ -2,6 +2,10 @@
 session_start();
 require('connect.php'); // contains $conn
 
+if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'User') {
+    header("Location: login.php");
+    exit();
+}
 $username = $_SESSION['username'] ?? 'guest'; // Default username if session missing
 
 $bmiResult = "";
@@ -24,9 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['calculate'])) {
         else $classification = "Class III Obese";
 
         $today = date("Y-m-d");
-
-        $stmt = $conn->prepare("INSERT INTO progress_record (username, weight, height, bmi, classification, date) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sdddss", $username, $weight, $height, $bmiResult, $classification, $today);
+        $stmt = $conn->prepare("INSERT INTO progress_record (UserName, Progress_Weight, Progress_BMIValue, Progress_Status, ProgressDate) VALUES (?, ?, ?, ?, ?)");
+        
+        $stmt->bind_param("sddss", $username, $weight, $bmiResult, $classification, $today);
         $stmt->execute();
         $stmt->close();
 
@@ -47,8 +51,8 @@ if (isset($_GET['delete'])) {
 
 
 if (isset($_POST['clear_all'])) {
-    $stmt = $conn->prepare("DELETE FROM progress_record WHERE username = ?");
-    $stmt->bind_param("s", $username);
+    $stmt = $conn->prepare("DELETE FROM progress_record WHERE UserName = ?");
+    $stmt->bind_param("s", $_SESSION['UserName']);
     $stmt->execute();
     $stmt->close();
     $successMessage = "All records cleared.";
@@ -56,8 +60,8 @@ if (isset($_POST['clear_all'])) {
 
 
 $records = [];
-$stmt = $conn->prepare("SELECT * FROM progress_record WHERE username = ? ORDER BY date DESC");
-$stmt->bind_param("s", $username);
+$stmt = $conn->prepare("SELECT * FROM progress_record WHERE UserName = ? ORDER BY ProgressDate DESC");
+$stmt->bind_param("s", $UserName);
 $stmt->execute();
 $result = $stmt->get_result();
 while ($row = $result->fetch_assoc()) {
@@ -115,6 +119,7 @@ footer { background-color: #2c2c63; color: white; padding: 20px; text-align: cen
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -270,18 +275,7 @@ footer { background-color: #2c2c63; color: white; padding: 20px; text-align: cen
 
   </script>
 
-  <?php else: ?>
-    <p>No BMI records for this month.</p>
   <?php endif; ?>
-</div>
-
-<footer>
-  <div class="footer-links">
-    <a href="terms.php">Terms & Conditions</a>
-    <a href="privacy.php">Privacy Policy</a>
-  </div>
-  <div>&copy; <?= date('Y') ?> HealthMate. All rights reserved.</div>
-</footer>
 
 </body>
 </html>
